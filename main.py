@@ -1,9 +1,10 @@
 from fastapi import FastAPI
-from routes import products
+from routes import products,jira
 
 app = FastAPI()
 
 app.include_router(products.router)
+app.include_router(jira.router)
 
 @app.get("/")
 def read_root():
